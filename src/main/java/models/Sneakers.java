@@ -5,14 +5,14 @@ public class Sneakers {
     private String name;
     private String brand;
     private String sport;
-    private float size;
+    private double size;
     private Integer qty;
-    private float price;
+    private double price;
 
     public Sneakers(){
 
     }
-    public Sneakers(Integer id, String name, String brand, String sport, float size, Integer qty, float price){
+    public Sneakers(Integer id, String name, String brand, String sport, double size, Integer qty, double price){
         this.id = id;
         this.name = name;
         this.brand = brand;
@@ -55,11 +55,11 @@ public class Sneakers {
         this.sport = sport;
     }
 
-    public float getSize() {
+    public double getSize() {
         return size;
     }
 
-    public void setSize(float size) {
+    public void setSize(double size) {
         this.size = size;
     }
 
@@ -71,11 +71,11 @@ public class Sneakers {
         this.qty = qty;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 }

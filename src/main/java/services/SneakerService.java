@@ -3,11 +3,10 @@ package services;
 import models.Sneakers;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 public class SneakerService {
 
-    private static Integer nextId = 1;
+    private Integer nextId = 1;
     private ArrayList<Sneakers> inventory = new ArrayList<>();
 
     public Sneakers create(String name, String brand, String sport, double size, Integer qty, double price){
@@ -28,12 +27,7 @@ public class SneakerService {
     }
 
     public Boolean delete(int id){
-        for(Sneakers each: inventory){
-            if(each.getId().equals(id)){
-                return inventory.remove(each);
-            }
-        }
-        return false;
+        return inventory.remove(findSneaker(id));
     }
 
 

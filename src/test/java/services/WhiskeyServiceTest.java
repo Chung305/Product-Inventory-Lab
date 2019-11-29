@@ -1,8 +1,8 @@
 package services;
 
-import models.Sneakers;
 import models.Whiskey;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class WhiskeyServiceTest {
@@ -22,6 +22,19 @@ public class WhiskeyServiceTest {
         Assert.assertEquals(expectedBrand, actual);
 
     }
+    @Test
+    public void atestDelete(){
+
+        Boolean expected = true;
+
+        //when
+        WhiskeyService whiskeyService = new WhiskeyService();
+        whiskeyService.create("Bulleit");
+        whiskeyService.create("Makers Mark");
+
+        Assert.assertEquals(expected, whiskeyService.delete(1));
+
+    }
 
     @Test
     public void findWhiskeyTest(){
@@ -29,11 +42,11 @@ public class WhiskeyServiceTest {
         String expectedBrand = "Bulleit";
 
         //when
-        WhiskeyService whiskeyService = new WhiskeyService();
-        Whiskey whiskey = whiskeyService.create(expectedBrand );
+        WhiskeyService whiskeyServices = new WhiskeyService();
+        Whiskey whiskey = whiskeyServices.create(expectedBrand );
 
         //then
-        Assert.assertEquals(whiskey, whiskeyService.findWhiskey(1));
+        Assert.assertEquals(whiskey, whiskeyServices.findWhiskey(1));
     }
 
     @Test
@@ -49,19 +62,5 @@ public class WhiskeyServiceTest {
         Assert.assertEquals(inventory, whiskeyService.findAll());
     }
 
-    @Test
-    public void testDelete(){
-        Boolean expected = true;
 
-        //when
-        WhiskeyService whiskeyService = new WhiskeyService();
-        whiskeyService.create("Bulleit");
-        whiskeyService.create("Makers Mark");
-
-        Assert.assertEquals(expected, whiskeyService.delete(1));
-
-
-
-
-    }
 }

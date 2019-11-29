@@ -6,7 +6,7 @@ import models.Whiskey;
 import java.util.ArrayList;
 
 public class WhiskeyService {
-    private static Integer nextId = 1;
+    private Integer nextId = 1;
     private ArrayList<Whiskey> inventory = new ArrayList<>();
 
     public Whiskey create(String brand){
@@ -19,11 +19,12 @@ public class WhiskeyService {
     }
 
     public Whiskey findWhiskey(Integer id){
-//        for(Whiskey each : inventory){
-//            if(each.getId().equals(id))
-//                return each;
-//        }
-        return inventory.stream().filter(x -> x.getId().equals(id)).findFirst().orElse(null);
+        for(Whiskey each : inventory){
+            if(each.getId().equals(id))
+                return each;
+        }
+        return null;
+        //return inventory.stream().filter(x -> x.getId().equals(id)).findFirst().orElse(null);
     }
 
     public Whiskey[] findAll(){
@@ -31,12 +32,7 @@ public class WhiskeyService {
     }
 
     public Boolean delete(int id){
-        for(Whiskey each: inventory){
-            if(each.getId().equals(id)){
-                return inventory.remove(each);
-            }
-        }
-        return false;
+        return inventory.remove(findWhiskey(id));
     }
 
 }

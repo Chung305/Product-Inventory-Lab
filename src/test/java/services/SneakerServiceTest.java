@@ -93,9 +93,7 @@ public class SneakerServiceTest {
 
         //then
         Assert.assertEquals(expected, sneakerService.delete(1));
-        Assert.assertEquals(2, sneakerService.findAll().length);
-        sneakerService.delete(2);
-        Assert.assertEquals(1, sneakerService.findAll().length);
+        
 
 
 

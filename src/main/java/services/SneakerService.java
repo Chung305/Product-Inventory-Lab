@@ -20,10 +20,6 @@ public class SneakerService {
     }
 
     public Sneakers findSneaker(Integer id){
-//        for(Sneakers each : inventory){
-//            if(each.getId().equals(id))
-//                return each;
-//        }
         return inventory.stream().filter(x -> x.getId().equals(id)).findFirst().orElse(null);
     }
 

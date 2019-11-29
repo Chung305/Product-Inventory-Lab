@@ -12,9 +12,21 @@ public class Console {
                 "***          ZipCo Inventory Manager           ***\n" +
                 "**************************************************");
     }
-     public static String getString(String input){
+    public static Integer showMenu(){
+        return getInt("Do something\n" +
+                "1 - Create products\n" +
+                "2 - Look Through Product\n" +
+                "3 - Update Product\n" +
+                "4 - Delete Product\n" +
+                "5 - Product report\n" +
+                "6 - Exit");
+
+    }
+
+     public static Integer getInt(String input){
         Scanner scanner = new Scanner(System.in);
         System.out.println(input);
-        return scanner.next();
+        return scanner.nextInt();
      }
+
 }

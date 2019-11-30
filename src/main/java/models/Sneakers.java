@@ -78,4 +78,17 @@ public class Sneakers {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Sneakers{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
+                ", sport='" + sport + '\'' +
+                ", size=" + size +
+                ", qty=" + qty +
+                ", price=" + price +
+                '}';
+    }
 }
